@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQS0LTS7PD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GQS0LTS7PD');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="craft beer,craft,beer,cerveja,artesanal,xpt8,xpt8bit,xpt0">
+    <title>XPT8bit cerveja artesanal</title>
+    <link rel="icon" type="image/x-icon" href="images/site_favicon_16_1704789879571.ico">
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer {
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .social-buttons a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+        .description {
+            font-family: "Press Start 2P", cursive;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 20px;
+            max-width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .invite {
+            font-family: "Press Start 2P", cursive;
+            font-size: 1rem;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .form-container {
+            margin-top: 50px;
+            text-align: center;
+            max-width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-container h3 {
+            text-align: center;
+            font-family: "Press Start 2P", cursive;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .form-container input, .form-container textarea, .form-container button {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #f39c12;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .form-container button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header></header>
+
+    <img src="images/XPT8bit_logo_wording-1920w.webp" alt="XPT8bit Logo">
+
+    <div class="social-buttons">
+        <a href="https://www.facebook.com/cervejaxpt8bit" target="_blank">
+            <img src="images/facebook-icon.png" alt="Facebook" style="width: 30px; height: 30px;">
+        </a>
+        <a href="https://www.instagram.com/cervejaxpt8bit/" target="_blank">
+            <img src="images/instagram-icon.png" alt="Instagram" style="width: 30px; height: 30px;">
+        </a>
+    </div>
+
+    <div class="description">
+        Desde 2014 que Roberto e Miguel exploram os segredos da cerveja artesanal.<br><br>
+        Em 2020 participam pela primeira vez no Concurso Nacional de Cervejas Artesanais, alcançando o #2 lugar na categoria Ale.
+    </div>
+
+    <div class="form-container">
+        <h3>Vem beber uma cerveja connosco!</h3>
+        <form id="contactForm" action="https://formsubmit.co/info@cervejaxpt8bit.pt" method="POST" onsubmit="return validateForm()">
+            <!-- Honeypot field -->
+            <input type="text" name="_honeypot" style="display:none;" tabindex="-1">
+            <input type="hidden" name="_captcha" value="false">
+
+            <input type="text" id="name" name="name" placeholder="Digite o seu nome" required>
+
+            <input type="email" id="email" name="email" placeholder="Digite o seu e-mail" required>
+
+            <textarea id="message" name="message" rows="4" placeholder="Escreva sua mensagem" required></textarea>
+
+            <button type="submit" id="submitButton">ENVIAR</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 XPT8bit Cerveja Artesanal - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const submitButton = document.getElementById('submitButton');
+
+            // Simple email validation regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!name || !email || !message) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert('Por favor, insira um endereço de e-mail válido.');
+                return false;
+            }
+
+            // Disable the submit button after successful validation
+            submitButton.disabled = true;
+            submitButton.innerText = 'Enviando...';
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>
