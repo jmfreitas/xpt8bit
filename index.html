@@ -124,9 +124,10 @@
 
     <div class="form-container">
         <h3>Vem beber uma cerveja connosco!</h3>
-        <form id="contactForm" action="https://formsubmit.co/info@cervejaxpt8bit.pt" method="POST" onsubmit="return validateForm()">
+        <form action="https://api.web3forms.com/submit" method="POST">
             <!-- Honeypot field -->
             <input type="text" name="_honeypot" style="display:none;" tabindex="-1">
+            <input type="hidden" name="access_key" value="f9e03402-b136-406f-89e7-200539322cd2">
             <input type="hidden" name="_captcha" value="false">
 
             <input type="text" id="name" name="name" placeholder="Digite o seu nome" required>
@@ -171,3 +172,4 @@
     </script>
 </body>
 </html>
+
